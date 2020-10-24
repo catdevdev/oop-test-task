@@ -24,10 +24,28 @@
 //     }
 // }
 import { Person } from './Person'
+import { ISalSum } from './ISalSum'
+export class Seller extends Person implements ISalSum {
+  protected experience: number
+  protected salarysum: number
 
-interface 
+  // get set Experience
+  get Experience(): number {
+    return this.experience
+  }
+  set Experience(value: number) {
+    this.experience = value
+  }
+  // get set Salarysum
+  get Salarysum(): number {
+    return this.salarysum
+  }
+  set Salarysum(value: number) {
+    this.salarysum = value
+  }
 
-class Seller extends Person implements  {
-  protected experience: number;
-  protected salarysum: number;
+  CalcSum(): number {
+    this.salarysum = this.Salary + this.experience * 0.2
+    return this.salarysum
+  }
 }
