@@ -25,9 +25,12 @@
 // }
 import { Person } from './Person'
 import { ISalSum } from './ISalSum'
+import { Event } from './Event'
 export class Seller extends Person implements ISalSum {
   protected experience: number
   protected salarysum: number
+
+  public AddSeller = new Event()
 
   // get set Experience
   get Experience(): number {
